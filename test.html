@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<meta charset="utf-8">
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-title">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta content="telephone=no" name="format-detection">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" type="text/css" href="css/animate.min.css">
+</head>
+<body>
+<div class="swiper-container swiper-container-vertical">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+			<div class="jh">
+				<div class="div1 moveS">集合</div>
+				<div class="div2 scale5 moveRotate">社区</div>
+				<div class="div3 scale8 moveRotate6">博物馆</div>
+				<div class="div4 scale5 moveRotate2">社会<br>组织</div>
+				<div class="div5 scale8 moveRotate5">文化馆</div>
+				<div class="div6 scale5 moveRotate4">图书馆</div>
+				<div class="div7 scale8 moveRotate7">文广<br>新闻</div>
+				<div class="div8 scale5 moveRotate3">工青<br>妇团</div>
+			</div>
+        </div>
+        <div class="swiper-slide">
+        	<div class="td">
+				<div class="div1 moveB">通达</div>
+				<div class="div2 scale8">云平台</div>
+				<div class="div3 scale8">其他<br>收效</div>
+			</div>
+		
+        </div>
+        <div class="swiper-slide">
+        	<div class="sx">
+				<div class="div1">收效</div>
+				<div class="div2 scale8">是否<br>满意</div>
+				<div class="div3 scale8">是否<br>收效</div>
+			</div>
+			<div class="jh-2">
+				<div class="div2"></div>
+				<div class="div1">集合</div>
+				<div class="div3"></div>
+			</div>
+        </div>
+    </div>
+</div>
+	<!-- -->
+	<script type="text/javascript" src="js/swiper.min.js"></script>
+	<script type="text/javascript" src="js/swiper.animate1.0.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+	<script>     
+	$(document).ready(function () {
+	    var swiper = new Swiper('.swiper-container', {
+	        direction: 'vertical',
+	        slidesPerView: 1,
+	        spaceBetween: 30,
+	        mousewheelControl: true,
+	        onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+		      swiperAnimateCache(swiper); //隐藏动画元素 
+		      swiperAnimate(swiper); //初始化完成开始动画
+		    }, 
+		    onSlideChangeEnd: function(swiper){ 
+		      swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+		    } 
+	    });
+	    $(".sx").find(".div3").click(function(){
+	    	$(".jh-2").show(100);
+	    })
+     });
+	         
+  </script>
+</body>
+</body>
+</html>
